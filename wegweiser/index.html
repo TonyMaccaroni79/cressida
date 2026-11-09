@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scheidung Österreich: Welcher Weg passt? | Cressida</title>
+<meta name="description" content="Sechs Fragen, zwei Minuten: Der Wegweiser zeigt, ob einvernehmliche Scheidung, Mediation oder Klage zu Ihnen passt, mit Ihren nächsten Schritten.">
+<link rel="canonical" href="https://cressida.at/wegweiser/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#1F5F5B">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/pjs.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Cressida">
+<meta property="og:title" content="Welcher Weg passt zu Ihrer Trennung?">
+<meta property="og:description" content="Sechs Fragen, zwei Minuten, Ihr persönlicher Fahrplan für Trennung oder Scheidung in Österreich.">
+<meta property="og:url" content="https://cressida.at/wegweiser/">
+<meta property="og:image" content="https://cressida.at/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Cressida Wegweiser","url":"https://cressida.at/wegweiser/","description":"Interaktiver Wegweiser für Trennung und Scheidung in Österreich. Sechs Fragen führen zu einem von vier Wegen mit persönlichen nächsten Schritten.","applicationCategory":"UtilitiesApplication","operatingSystem":"Alle","inLanguage":"de-AT","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://cressida.at/"},{"@type":"ListItem","position":2,"name":"Wegweiser","item":"https://cressida.at/wegweiser/"}]}]}
+</script>
+<style>
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px}
+.bar{height:8px;background:var(--soft2);border-radius:99px;overflow:hidden;margin:10px 0 28px}
+.bar i{display:block;height:8px;background:var(--accent);border-radius:99px;transition:width .2s}
+.opt{font:inherit;font-size:17px;font-weight:600;text-align:left;color:var(--fg);background:var(--surface);border:1.5px solid var(--line-strong);border-radius:12px;padding:16px 18px;min-height:52px;cursor:pointer;width:100%}
+.opt:hover{border-color:var(--accent);background:var(--soft)}
+.link{font:inherit;font-size:15px;font-weight:600;color:var(--accent);background:none;border:0;padding:12px 0 0;min-height:44px;cursor:pointer}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start}
+.step .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center}
+.step h3{margin:0 0 4px;font-size:18px}.step p{margin:0;font-size:15px;color:var(--body)}
+.static h3{font-size:19px;margin:24px 0 6px}.static p{color:var(--body);margin:0}
+</style>
+</head>
+<body>
+<header class="site"><div class="w">
+<a class="logo" href="/"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="var(--accent)"/><path d="M22 11.5a8 8 0 1 0 0 11" fill="none" stroke="var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/><circle cx="23.5" cy="17" r="1.8" fill="var(--accent-ink)"/></svg><span>Cressida</span></a>
+<nav class="main" aria-label="Hauptnavigation"><a href="/">Startseite</a><a href="/wegweiser/" aria-current="page">Wegweiser</a><a href="/unterhaltsrechner/">Unterhaltsrechner</a></nav>
+</div></header>
+
+<main class="w narrow" style="padding-block:56px 64px">
+<p class="eyebrow">Wegweiser</p>
+<div id="quiz">
+<h1 style="font-size:clamp(30px,4vw,40px)">Welcher Weg passt zu Ihnen?</h1>
+<div class="qbox">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)"><span id="qnum">Frage 1 von 6</span><span>anonym, ohne Anmeldung</span></div>
+<div class="bar" aria-hidden="true"><i id="bar" style="width:0%"></i></div>
+<fieldset style="border:0;margin:0;padding:0">
+<legend id="qtitle" style="font-size:24px;font-weight:700;line-height:1.3;padding:0;margin-bottom:6px"></legend>
+<p id="qhint" style="margin:0 0 22px;font-size:15px;color:var(--muted)"></p>
+<div id="opts" style="display:flex;flex-direction:column;gap:10px"></div>
+</fieldset>
+<button type="button" class="link" id="back" hidden>← Vorige Frage</button>
+</div>
+<p style="margin:20px 0 0;font-size:14px;color:var(--muted)">Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert.</p>
+</div>
+
+<div id="result" hidden>
+<p style="margin:0 0 6px;font-size:15px;color:var(--muted)">Ihr Ergebnis</p>
+<h1 id="rtitle" style="font-size:clamp(30px,4vw,40px);margin-bottom:14px"></h1>
+<p id="rlead" class="lead" style="max-width:none"></p>
+<h2 style="margin:0 0 16px;font-size:21px">Ihre nächsten Schritte</h2>
+<ol id="rsteps" style="margin:0 0 32px;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px"></ol>
+<div class="row" style="justify-content:space-between;align-items:center;margin-bottom:28px">
+<a class="btn ghost" href="/unterhaltsrechner/">Unterhalt berechnen</a>
+<button type="button" class="link" id="restart" style="padding:0">Wegweiser neu starten</button>
+</div>
+<div class="alert" style="margin-bottom:20px"><p><strong>Erleben Sie Gewalt in Ihrer Beziehung?</strong> Holen Sie sich zuerst Schutz: Frauenhelpline 0800 222 555, Notruf 133.</p></div>
+<p style="margin:0;font-size:13px;color:var(--muted)">Der Wegweiser gibt eine allgemeine Orientierung nach österreichischem Recht und ersetzt keine individuelle Beratung. Stand: November 2026.</p>
+</div>
+
+<section class="static" aria-labelledby="wege" style="margin-top:64px;border-top:1px solid var(--line);padding-top:40px">
+<h2 id="wege" class="h2" style="font-size:clamp(24px,3vw,32px)">Die vier Wege bei Trennung und Scheidung in Österreich</h2>
+<h3>1. Trennung ohne Scheidung</h3>
+<p>Wer nicht verheiratet ist, braucht kein Scheidungsverfahren. Obsorge und Unterhalt der Kinder, die Wohnung und gemeinsame Verträge sollten trotzdem schriftlich geregelt werden.</p>
+<h3>2. Einvernehmliche Scheidung</h3>
+<p>Der häufigste Weg: 87,1 % aller Scheidungen 2025 liefen einvernehmlich (Statistik Austria). Voraussetzung ist, dass die eheliche Lebensgemeinschaft seit mindestens einem halben Jahr aufgehoben ist, beide die Ehe als zerrüttet ansehen und eine Vereinbarung über alle Folgen vorliegt. Getrennt wohnen ist dafür nicht nötig. Mit minderjährigen Kindern ist eine Elternberatung nach § 95 Abs 1a AußStrG Pflicht.</p>
+<h3>3. Erst Mediation, dann einvernehmlich</h3>
+<p>Wenn beide die Trennung wollen, aber in einzelnen Punkten uneinig sind, klärt eine Familienmediation die Streitpunkte. Sie wird vom Bundeskanzleramt gefördert; Paare zahlen einen Selbstbehalt nach Einkommen.</p>
+<h3>4. Strittige Scheidung</h3>
+<p>Stimmt eine Seite nicht zu, bleibt die Scheidungsklage. Nach drei Jahren aufgehobener Lebensgemeinschaft kommt eine Scheidung wegen Zerrüttung in Frage. Eine anwaltliche Erstberatung ist hier früh sinnvoll.</p>
+<p style="margin-top:20px;font-size:13px;color:var(--muted)">Allgemeine Information nach österreichischem Recht, keine Rechtsberatung. Quellen: oesterreich.gv.at, Bundeskanzleramt, Statistik Austria.</p>
+</section>
+</main>
+
+<footer class="site"><div class="w">
+<p>Cressida bietet allgemeine Informationen zum österreichischen Recht. Die Inhalte ersetzen keine individuelle Rechtsberatung. © 2026 cressida.at</p>
+<nav aria-label="Fußzeile"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav>
+</div></footer>
+
+<script>
+(function(){
+var Q=[
+{id:'ehe',t:'Sind Sie verheiratet oder in eingetragener Partnerschaft?',h:'Davon hängt ab, ob überhaupt ein Scheidungsverfahren nötig ist.',o:[['ja','Ja'],['nein','Nein, wir leben in einer Lebensgemeinschaft']]},
+{id:'einig',t:'Sind Sie sich einig, dass Sie sich trennen?',h:'Ehrlich geschätzt reicht. Es geht nur um die grobe Richtung.',o:[['ja','Ja, wir wollen es beide'],['teils','Grundsätzlich ja, aber es gibt Streitpunkte'],['nein','Nein, die andere Seite will nicht']]},
+{id:'kinder',t:'Haben Sie gemeinsame Kinder unter 18?',h:'Bei minderjährigen Kindern gelten zusätzliche Schritte.',o:[['ja','Ja'],['nein','Nein']]},
+{id:'wohnen',t:'Wie wohnen Sie?',h:'Die Wohnung ist oft der größte Brocken einer Trennung.',o:[['eigentum','Gemeinsame Wohnung oder Haus im Eigentum'],['miete','Gemeinsame Mietwohnung'],['keine','Keine gemeinsame Wohnung (mehr)']]},
+{id:'kredit',t:'Haben Sie gemeinsame Kredite oder Schulden?',h:'Auch Leasing und Bürgschaften zählen dazu.',o:[['ja','Ja'],['nein','Nein'],['unklar','Weiß ich nicht genau']]},
+{id:'dauer',t:'Seit wann ist Ihre Beziehung beendet?',h:'Gemeint ist das Ende der Lebensgemeinschaft. Getrennte Wohnungen sind dafür nicht nötig.',o:[['noch','Wir leben noch als Paar zusammen'],['kurz','Seit weniger als sechs Monaten'],['mittel','Seit sechs Monaten bis drei Jahren'],['lang','Seit mehr als drei Jahren']]}];
+var step=0,a={};
+function $(i){return document.getElementById(i);}
+function render(){
+ if(step>=Q.length){show();return;}
+ var q=Q[step];$('quiz').hidden=false;$('result').hidden=true;
+ $('qnum').textContent='Frage '+(step+1)+' von '+Q.length;$('bar').style.width=Math.round(step/Q.length*100)+'%';
+ $('qtitle').textContent=q.t;$('qhint').textContent=q.h;$('back').hidden=step===0;
+ var box=$('opts');box.innerHTML='';
+ q.o.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o[1];
+  if(a[q.id]===o[0]){b.style.borderColor='var(--accent)';b.style.background='var(--soft)';}
+  b.onclick=function(){a[q.id]=o[0];step++;render();};box.appendChild(b);});
+}
+function result(){
+ var s=[],t,l;function add(x,y){s.push([x,y]);}
+ var m=a.ehe==='ja',am=m&&(a.einig==='ja'||a.einig==='teils');
+ if(!m){t='Trennung ohne Scheidung';l='Ohne Ehe gibt es kein Scheidungsverfahren. Trotzdem sollten Sie einige Dinge sauber und schriftlich regeln, damit später kein Streit entsteht.';}
+ else if(a.einig==='ja'){t='Einvernehmliche Scheidung';l='Der häufigste Weg in Österreich: 87 % aller Scheidungen 2025 liefen einvernehmlich. Sie brauchen eine schriftliche Vereinbarung über alle Scheidungsfolgen.';}
+ else if(a.einig==='teils'){t='Erst Mediation, dann einvernehmlich';l='Sie sind sich im Grundsatz einig, aber nicht in allem. Eine Mediation klärt Streitpunkte meist schneller und günstiger als ein Gerichtsverfahren.';
+  add('Mediation beginnen','Eine Familienmediation hilft, die offenen Punkte gemeinsam zu lösen. Bei Trennung und Scheidung wird sie vom Bundeskanzleramt gefördert, Sie zahlen einen Selbstbehalt nach Einkommen.');}
+ else{t='Strittige Scheidung prüfen';l='Wenn die andere Seite nicht zustimmt, bleibt die Scheidungsklage. Das ist aufwendiger, deshalb lohnt eine anwaltliche Erstberatung früh.';
+  add('Rechtliche Erstauskunft','Lassen Sie Ihre Situation einschätzen, bevor Sie Schritte setzen. Kostenlose Auskünfte gibt es am Amtstag des Bezirksgerichts und bei Familienberatungsstellen.');
+  if(a.dauer==='lang')add('Drei Jahre getrennt','Nach drei Jahren aufgehobener Lebensgemeinschaft kommt eine Scheidung wegen Zerrüttung in Frage. Lassen Sie prüfen, ob das auf Sie zutrifft.');
+  add('Mediation trotzdem anbieten','Auch in festgefahrenen Lagen gelingt oft eine Einigung zu einzelnen Punkten. Das spart Zeit und Kosten.');}
+ if(am&&(a.dauer==='noch'||a.dauer==='kurz'))add('Sechs-Monats-Frist beachten','Für die einvernehmliche Scheidung muss die eheliche Lebensgemeinschaft seit mindestens einem halben Jahr aufgehoben sein. Getrennt wohnen müssen Sie dafür nicht. Nutzen Sie die Zeit für die Vereinbarung.');
+ if(am)add('Scheidungsvergleich vorbereiten','Obsorge und Kontaktrecht, Unterhalt, Wohnung, Vermögen und Schulden schriftlich regeln.');
+ if(a.kinder==='ja'&&am)add('Elternberatung einplanen','Mit minderjährigen Kindern ist vor der einvernehmlichen Scheidung eine Elternberatung nach § 95 Abs 1a AußStrG Pflicht. Die Bestätigung braucht das Gericht.');
+ if(a.kinder==='ja')add('Kindesunterhalt berechnen','Der Unterhaltsrechner zeigt, was nach der Prozentwertmethode der Gerichte ungefähr zu zahlen ist.');
+ if(a.wohnen==='eigentum')add('Wert der Wohnung klären','Bevor jemand auszahlt oder verkauft, braucht es einen realistischen Wert. Eine Bewertung verhindert späteren Streit.');
+ if(a.wohnen==='miete')add('Mietvertrag klären','Klären Sie, wer in der Wohnung bleibt und ob der Mietvertrag umgeschrieben wird. Sprechen Sie früh mit der Vermieterseite.');
+ if(a.kredit==='ja')add('Mit der Bank sprechen','Wer gegenüber der Bank haftet, ändert sich durch Ihre Vereinbarung allein nicht. Klären Sie früh, wer den Kredit übernimmt.');
+ if(a.kredit==='unklar')add('Überblick über Schulden','Sammeln Sie Kreditverträge, Leasing und Bürgschaften. Erst dann lässt sich fair aufteilen.');
+ return {t:t,l:l,s:s};
+}
+function show(){
+ var r=result();$('quiz').hidden=true;$('result').hidden=false;
+ $('rtitle').textContent=r.t;$('rlead').textContent=r.l;
+ var ol=$('rsteps');ol.innerHTML='';
+ r.s.forEach(function(x,i){var li=document.createElement('li');li.className='step';
+  li.innerHTML='<span class="n"></span><div><h3></h3><p></p></div>';
+  li.querySelector('.n').textContent=i+1;li.querySelector('h3').textContent=x[0];li.querySelector('p').textContent=x[1];ol.appendChild(li);});
+ window.scrollTo(0,0);
+}
+$('back').onclick=function(){if(step>0){step--;render();}};
+$('restart').onclick=function(){step=0;a={};render();};
+render();
+})();
+</script>
+</body>
+</html>

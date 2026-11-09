@@ -1,0 +1,24 @@
+# Cressida
+
+> Unabhängige Informationsseite zu Trennung und Scheidung in Österreich. Erklärt Ablauf, Kosten, Kinder, Wohnung und Geld nach österreichischem Recht, mit Quellenangaben und Prüfdatum. Keine Rechtsberatung.
+
+Cressida richtet sich an Menschen in Österreich, die sich trennen oder scheiden lassen. Alle Inhalte beziehen sich ausschließlich auf österreichisches Recht (EheG, AußStrG, ABGB) und weisen auf Unterschiede zu Deutschland hin. Jede Seite nennt ihre Quellen (oesterreich.gv.at, Bundeskanzleramt, Statistik Austria, Gesetzestexte) und das Datum der letzten Prüfung.
+
+Kernfakten (Stand November 2026):
+- 2025 wurden in Österreich 15.217 Ehen geschieden, 87,1 % davon einvernehmlich (Statistik Austria).
+- Einvernehmliche Scheidung: Lebensgemeinschaft seit mindestens einem halben Jahr aufgehoben, beidseitiges Zugeständnis der Zerrüttung, Vereinbarung über alle Scheidungsfolgen. Getrennt wohnen ist nicht nötig.
+- Gerichtsgebühren: 406 Euro für den Antrag und 406 Euro für den Vergleich; 609 Euro für den Vergleich, wenn eine Immobilie betroffen ist (oesterreich.gv.at, Stand August 2026).
+- Mit minderjährigen Kindern ist vor der einvernehmlichen Scheidung eine Elternberatung nach § 95 Abs 1a AußStrG Pflicht.
+- Familienmediation bei Trennung und Scheidung wird vom Bundeskanzleramt gefördert.
+- Kindesunterhalt: Prozentsätze vom Nettoeinkommen inkl. Sonderzahlungen; Familienbeihilfe wird seit 2019 nicht abgezogen.
+
+## Seiten
+
+- [Startseite](https://cressida.at/): Überblick, vier Phasen einer Trennung, häufige Fragen
+- [Wegweiser](https://cressida.at/wegweiser/): sechs Fragen, die zu einem von vier Wegen führen (Trennung ohne Scheidung, einvernehmliche Scheidung, Mediation, strittige Scheidung)
+- [Unterhaltsrechner](https://cressida.at/unterhaltsrechner/): Kindesunterhalt nach der Prozentwertmethode (16/18/20/22 %), Regelbedarf 2026 (360/460/560/700/800 €), Abzüge für weitere Unterhaltspflichten, Betreuung und Doppelresidenz
+
+## Optional
+
+- [Impressum](https://cressida.at/impressum/)
+- [Datenschutz](https://cressida.at/datenschutz/)

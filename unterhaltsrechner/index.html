@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unterhaltsrechner Österreich 2026: Kindesunterhalt berechnen | Cressida</title>
+<meta name="description" content="Kindesunterhalt in Österreich berechnen: Prozentwertmethode, Regelbedarf 2026, Abzüge für weitere Kinder, Betreuung und Doppelresidenz. Kostenlos, mit Rechenweg.">
+<link rel="canonical" href="https://cressida.at/unterhaltsrechner/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#1F5F5B">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/pjs.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Cressida">
+<meta property="og:title" content="Unterhaltsrechner Österreich 2026">
+<meta property="og:description" content="Kindesunterhalt nach der Prozentwertmethode berechnen, mit Regelbedarf 2026 und vollständigem Rechenweg.">
+<meta property="og:url" content="https://cressida.at/unterhaltsrechner/">
+<meta property="og:image" content="https://cressida.at/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Unterhaltsrechner Österreich","url":"https://cressida.at/unterhaltsrechner/","description":"Kindesunterhalt nach der österreichischen Prozentwertmethode berechnen, mit Regelbedarf 2026, Abzügen für weitere Unterhaltspflichten, Betreuung und Doppelresidenz.","applicationCategory":"FinanceApplication","operatingSystem":"Alle","inLanguage":"de-AT","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://cressida.at/"},{"@type":"ListItem","position":2,"name":"Unterhaltsrechner","item":"https://cressida.at/unterhaltsrechner/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wie viel Kindesunterhalt zahlt man in Österreich?","acceptedAnswer":{"@type":"Answer","text":"Gerichte rechnen mit Prozentsätzen vom durchschnittlichen monatlichen Nettoeinkommen inklusive Sonderzahlungen: 16 % für Kinder unter 6 Jahren, 18 % von 6 bis 10, 20 % von 10 bis 15 und 22 % ab 15 Jahren. Für weitere Unterhaltspflichten sinkt der Satz."}},
+{"@type":"Question","name":"Wie hoch ist der Regelbedarf 2026?","acceptedAnswer":{"@type":"Answer","text":"Der Regelbedarf 2026 beträgt 360 Euro für Kinder von 0 bis 5 Jahren, 460 Euro von 6 bis 9, 560 Euro von 10 bis 14, 700 Euro von 15 bis 19 und 800 Euro ab 20 Jahren."}},
+{"@type":"Question","name":"Wird die Familienbeihilfe vom Unterhalt abgezogen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Seit 2019 werden Familienbeihilfe und Kinderabsetzbetrag nicht mehr vom Geldunterhalt abgezogen; Familienbonus Plus und Unterhaltsabsetzbetrag sind unterhaltsrechtlich neutral."}}]}]}
+</script>
+<style>
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/pjs.woff2) format('woff2')}
+
+/* Layout: zweispaltig – Eingaben links, Ergebnis rechts klebend; auf dem Handy untereinander */
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --soft:#EAF1EF; --line:#DCE3E1; --line-strong:#B9C6C3;
+  --fg:#1B2A2F; --muted:#4A5D62; --accent:#1F5F5B; --accent-ink:#FFFFFF; --accent-soft:#D6E7E3;
+  --warn-bg:#FBF1E2; --warn-fg:#7A4A0B;
+  --font:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101A1C; --surface:#172427; --soft:#1C2F31; --line:#29393C; --line-strong:#3C5155;
+  --fg:#E6EEEC; --muted:#A3B5B2; --accent:#6FC2B8; --accent-ink:#0E1B1C; --accent-soft:#1F3C3A;
+  --warn-bg:#33281A; --warn-fg:#F2C98A; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#101A1C; --surface:#172427; --soft:#1C2F31; --line:#29393C; --line-strong:#3C5155;
+  --fg:#E6EEEC; --muted:#A3B5B2; --accent:#6FC2B8; --accent-ink:#0E1B1C; --accent-soft:#1F3C3A;
+  --warn-bg:#33281A; --warn-fg:#F2C98A; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 48px}
+.wrap{max-width:1120px;margin:0 auto}
+header.top{display:flex;align-items:center;gap:10px;padding-block:20px}
+.brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+.mark{width:30px;height:30px;flex:none}
+.intro{padding-block:12px 28px;max-width:720px}
+.eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0 0 12px;font-size:clamp(30px,4.2vw,44px);line-height:1.1;letter-spacing:-.03em;text-wrap:balance}
+.lead{margin:0;font-size:18px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card + .card{margin-top:16px}
+h2{margin:0 0 4px;font-size:19px;letter-spacing:-.01em}
+.hint{margin:0 0 16px;font-size:14px;color:var(--muted)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field:last-child{margin-bottom:0}
+label,.label{font-size:14px;font-weight:600}
+input[type=number],select{font:inherit;font-size:16px;color:var(--fg);background:var(--surface);border:1.5px solid var(--line-strong);border-radius:10px;padding:11px 12px;min-height:46px;width:100%}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.money{position:relative}
+.money input{padding-right:42px}
+.money span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:flex;align-items:center;gap:8px;font-weight:500;border:1.5px solid var(--line-strong);border-radius:10px;padding:10px 12px;min-height:44px;cursor:pointer}
+.seg input{accent-color:var(--accent);width:18px;height:18px;margin:0}
+.seg label:has(input:checked){border-color:var(--accent);background:var(--soft)}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:480px){.row2{grid-template-columns:minmax(0,1fr)}}
+.kids{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.kid{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--soft);border-radius:12px;padding:10px 12px}
+.kid .num{font-weight:700;font-size:14px;color:var(--accent);min-width:56px}
+.kid input{min-height:42px}
+.btn{font:inherit;font-weight:700;font-size:15px;border-radius:10px;padding:11px 16px;min-height:44px;cursor:pointer;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--fg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.icon{min-width:44px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+details.more{border-top:1px solid var(--line);margin-top:8px;padding-top:12px}
+details.more summary{cursor:pointer;font-weight:600;font-size:15px;min-height:32px}
+.result{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 16px)}
+.total{background:var(--accent);color:var(--accent-ink);border-radius:var(--r);padding:24px}
+.total .k{margin:0;font-size:14px;font-weight:600;opacity:.9}
+.total .v{margin:4px 0 2px;font-size:44px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.1}
+.total .s{margin:0;font-size:14px;opacity:.9}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
+th,td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.n,th.n{text-align:right}
+.tw{overflow-x:auto}
+.note{border-radius:12px;padding:14px 16px;font-size:14px;margin-top:14px;background:var(--warn-bg);color:var(--warn-fg)}
+.steps{margin:0;padding-left:20px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.steps b{color:var(--fg);font-weight:600}
+.upsell{background:var(--soft);border-radius:var(--r);padding:22px;margin-top:16px}
+.upsell h3{margin:0 0 6px;font-size:18px}
+.upsell p{margin:0 0 12px;font-size:14px;color:var(--muted)}
+.upsell ul{margin:0 0 14px;padding-left:20px;font-size:14px}
+.price{font-weight:800;font-size:22px;font-variant-numeric:tabular-nums}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mailform{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.mailform input{flex:1 1 200px;font:inherit;font-size:16px;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line-strong);min-height:44px;background:var(--surface);color:var(--fg)}
+.ok{font-size:14px;color:var(--accent);font-weight:600;margin:8px 0 0}
+.basis{margin-top:32px;max-width:760px}
+.basis h2{font-size:22px;margin-bottom:10px}
+.basis p{color:var(--muted);margin:0 0 12px}
+.legal{font-size:13px;color:var(--muted);margin-top:24px;max-width:760px}
+@media (prefers-reduced-motion:no-preference){.total .v{transition:opacity .2s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a href="/" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none"><svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="var(--accent)"/><path d="M22 11.5a8 8 0 1 0 0 11" fill="none" stroke="var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/><circle cx="23.5" cy="17" r="1.8" fill="var(--accent-ink)"/></svg>
+    <span class="brand">Cressida</span></a>
+    <nav style="margin-left:auto;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;font-weight:600"><a href="/" style="color:var(--fg);text-decoration:none">Startseite</a><a href="/wegweiser/" style="color:var(--fg);text-decoration:none">Wegweiser</a></nav>
+  </header>
+
+  <section class="intro">
+    <p class="eyebrow">Unterhaltsrechner · Stand 2026</p>
+    <h1>Kindesunterhalt in Österreich berechnen</h1>
+    <p class="lead">Nach der Prozentwertmethode der österreichischen Gerichte, mit Abzügen für weitere Kinder, erweiterter Betreuung und Doppelresidenz. Das Beispiel ist vorausgefüllt – ändern Sie einfach die Werte.</p>
+  </section>
+
+  <div class="grid">
+    <form id="calc" novalidate>
+      <div class="card">
+        <h2>Einkommen des zahlenden Elternteils</h2>
+        <p class="hint">Netto, also nach Steuern und Sozialversicherung. Gerechnet wird mit dem Jahresnetto inklusive 13. und 14. Gehalt, geteilt durch zwölf.</p>
+        <div class="field">
+          <span class="label" id="lbl-modus">Wie möchten Sie das Einkommen angeben?</span>
+          <div class="seg" role="radiogroup" aria-labelledby="lbl-modus">
+            <label><input type="radio" name="modus" id="modus-monat" value="monat" checked> Monatsnetto (14 Gehälter)</label>
+            <label><input type="radio" name="modus" id="modus-jahr" value="jahr"> Jahresnetto</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="einkommen" id="lbl-einkommen">Monatsnetto</label>
+          <div class="money"><input type="number" id="einkommen" inputmode="decimal" min="0" step="10" value="2800"><span>€</span></div>
+        </div>
+        <details class="more">
+          <summary>Familienbonus Plus bereinigen (optional)</summary>
+          <div class="field" style="margin-top:12px">
+            <label for="fbonus">Familienbonus, der monatlich in der Lohnverrechnung berücksichtigt wird</label>
+            <div class="money"><input type="number" id="fbonus" inputmode="decimal" min="0" step="1" value="0"><span>€</span></div>
+            <p class="hint" style="margin:0">Der Familienbonus ist unterhaltsrechtlich neutral. Ist er schon im Nettolohn enthalten, wird er hier wieder herausgerechnet.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <h2>Kinder, für die Unterhalt berechnet wird</h2>
+        <p class="hint">Alter in Jahren. Der Prozentsatz steigt mit 6, 10 und 15 Jahren.</p>
+        <div class="kids" id="kids"></div>
+        <button type="button" class="btn" id="addKid">+ Kind hinzufügen</button>
+      </div>
+
+      <div class="card">
+        <h2>Weitere Unterhaltspflichten</h2>
+        <p class="hint">Jede weitere Unterhaltspflicht senkt den Prozentsatz für jedes Kind.</p>
+        <div class="row2">
+          <div class="field">
+            <label for="ext10">Weitere Kinder unter 10 Jahren (z. B. aus einer anderen Beziehung)</label>
+            <input type="number" id="ext10" min="0" max="9" step="1" value="0">
+          </div>
+          <div class="field">
+            <label for="ext10p">Weitere Kinder ab 10 Jahren</label>
+            <input type="number" id="ext10p" min="0" max="9" step="1" value="0">
+          </div>
+        </div>
+        <div class="field">
+          <label for="ehe">Unterhalt an (Ex-)Ehepartner oder eingetragene Partnerin</label>
+          <select id="ehe">
+            <option value="0" selected>Nein</option>
+            <option value="1">Ja, Partner hat ein eigenes Einkommen (−1 Prozentpunkt)</option>
+            <option value="2">Ja, Partner hat ein geringes Einkommen (−2 Prozentpunkte)</option>
+            <option value="3">Ja, Partner hat kein eigenes Einkommen (−3 Prozentpunkte)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Betreuung</h2>
+        <p class="hint">Wie oft sind die Kinder beim zahlenden Elternteil?</p>
+        <div class="field">
+          <label for="betreuung">Betreuungsmodell</label>
+          <select id="betreuung">
+            <option value="0" selected>Übliches Kontaktrecht (z. B. jedes zweite Wochenende)</option>
+            <option value="1">Erweitert: rund 1 zusätzlicher Tag pro Woche</option>
+            <option value="2">Erweitert: rund 2 zusätzliche Tage pro Woche</option>
+            <option value="dr">Doppelresidenz: annähernd gleich viel bei beiden</option>
+          </select>
+        </div>
+        <div class="field" id="drField" hidden>
+          <label for="einkommenB">Monatsnetto des anderen Elternteils (14 Gehälter)</label>
+          <div class="money"><input type="number" id="einkommenB" inputmode="decimal" min="0" step="10" value="1900"><span>€</span></div>
+        </div>
+      </div>
+    </form>
+
+    <aside class="result" aria-live="polite">
+      <div class="total">
+        <p class="k" id="totalLabel">Unterhalt gesamt pro Monat</p>
+        <p class="v" id="total">–</p>
+        <p class="s" id="totalSub"></p>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h2>Pro Kind</h2>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Kind</th><th class="n">Satz</th><th class="n">Betrag</th><th class="n">Regelbedarf</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div id="notes"></div>
+        <details class="more" open>
+          <summary>So wurde gerechnet</summary>
+          <ol class="steps" id="steps" style="margin-top:10px"></ol>
+        </details>
+      </div>
+    </aside>
+  </div>
+
+  <section class="basis">
+    <h2>Wie Gerichte in Österreich den Kindesunterhalt berechnen</h2>
+    <p>Grundlage ist das durchschnittliche monatliche Nettoeinkommen des zahlenden Elternteils, also das Jahresnetto inklusive Sonderzahlungen geteilt durch zwölf. Davon steht jedem Kind ein Prozentsatz zu: 16 % unter 6 Jahren, 18 % von 6 bis 10, 20 % von 10 bis 15 und 22 % ab 15 Jahren.</p>
+    <p>Für jede weitere Unterhaltspflicht sinkt der Satz: um 1 Prozentpunkt je weiterem Kind unter 10 Jahren, um 2 je weiterem Kind ab 10 Jahren und um bis zu 3 für einen unterhaltsberechtigten Ehepartner. Familienbeihilfe und Kinderabsetzbetrag werden seit 2019 nicht mehr vom Unterhalt abgezogen.</p>
+    <p>Bei sehr hohen Einkommen begrenzen Gerichte den Unterhalt auf etwa das Zwei- bis Zweieinhalbfache des Regelbedarfs. Der Regelbedarf 2026 beträgt 360 € (0–5 Jahre), 460 € (6–9), 560 € (10–14), 700 € (15–19) und 800 € (ab 20). Betreut der zahlende Elternteil deutlich mehr als üblich, wird der Unterhalt je nach Umfang gekürzt; bei Doppelresidenz werden die Ansprüche gegen beide Eltern gegeneinander aufgerechnet.</p>
+  </section>
+
+  <p class="legal">Der Rechner liefert eine Orientierung nach der Rechtsprechung, Stand 2026. Er ersetzt keine Rechtsberatung: Gerichte entscheiden im Einzelfall und berücksichtigen etwa Sonderbedarf, Schulden, Sachleistungen oder ein höheres erzielbares Einkommen. Kostenlos und verbindlich festsetzen lassen können Sie den Unterhalt beim Kinder- und Jugendhilfeträger Ihres Bezirks. Ihre Eingaben bleiben in Ihrem Browser.</p>
+  <p class="legal"><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></p>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var RB = [{max:5,v:360,l:'0–5 J.'},{max:9,v:460,l:'6–9 J.'},{max:14,v:560,l:'10–14 J.'},{max:19,v:700,l:'15–19 J.'},{max:Infinity,v:800,l:'ab 20 J.'}];
+  var BELASTUNG = 980; // rund 75 % des allgemeinen Grundbetrags 2026 (1.308 €)
+  var eur = new Intl.NumberFormat('de-AT',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  var eur2 = new Intl.NumberFormat('de-AT',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2});
+
+  function basePct(age){ return age < 6 ? 16 : age < 10 ? 18 : age < 15 ? 20 : 22; }
+  function regel(age){ for (var i=0;i<RB.length;i++){ if (age <= RB[i].max) return RB[i]; } return RB[RB.length-1]; }
+  function num(id){ var v = parseFloat(String(document.getElementById(id).value).replace(',','.')); return isFinite(v) && v > 0 ? v : 0; }
+  function int(id){ return Math.max(0, Math.min(9, Math.round(num(id)))); }
+
+  // Kernberechnung, ohne DOM – auch für den späteren PDF-Report verwendbar
+  function berechne(inp){
+    var bem = inp.modus === 'jahr' ? inp.einkommen / 12 : inp.einkommen * 14 / 12;
+    bem = Math.max(0, bem - inp.fbonus);
+    var bemB = inp.einkommenB * 14 / 12;
+    var kinder = inp.alter.map(function(age, i){
+      var abz = 0;
+      inp.alter.forEach(function(a, j){ if (j !== i) abz += a < 10 ? 1 : 2; });
+      abz += inp.ext10 * 1 + inp.ext10p * 2 + inp.ehe;
+      var pct = Math.max(0, basePct(age) - abz);
+      var r = regel(age);
+      var roh = bem * pct / 100;
+      var cap = r.v * 2.5, gedeckelt = false, luxus = false;
+      if (roh > r.v * 2) luxus = true;
+      if (roh > cap){ roh = cap; gedeckelt = true; }
+      var betrag = roh, kuerzung = 0, drInfo = null;
+      if (inp.betreuung === 'dr'){
+        var b = Math.min(bemB * pct / 100, cap);
+        drInfo = {a: roh, b: b};
+        betrag = (roh - b) / 2; // Saldierung, dann Halbierung (OGH 4 Ob 12/25f)
+      } else {
+        kuerzung = inp.betreuung * 10;
+        betrag = roh * (1 - kuerzung / 100);
+      }
+      return {nr:i+1, alter:age, basis:basePct(age), abzug:abz, pct:pct, regel:r, roh:roh, betrag:betrag, gedeckelt:gedeckelt, luxus:luxus, kuerzung:kuerzung, dr:drInfo};
+    });
+    var summe = kinder.reduce(function(s,k){ return s + k.betrag; }, 0);
+    return {bem:bem, bemB:bemB, kinder:kinder, summe:summe, rest: bem - Math.max(0, summe)};
+  }
+  window.cressidaUnterhalt = berechne;
+
+  var alter = [4, 11];
+  var kidsEl = document.getElementById('kids');
+
+  function renderKids(){
+    kidsEl.innerHTML = '';
+    alter.forEach(function(a, i){
+      var row = document.createElement('div'); row.className = 'kid';
+      var id = 'kid-' + i;
+      row.innerHTML = '<label class="num" for="' + id + '">Kind ' + (i+1) + '</label>' +
+        '<input type="number" id="' + id + '" min="0" max="27" step="1" value="' + a + '" aria-label="Alter von Kind ' + (i+1) + ' in Jahren">' +
+        '<button type="button" class="btn icon" aria-label="Kind ' + (i+1) + ' entfernen"' + (alter.length < 2 ? ' disabled' : '') + '>' +
+        '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>';
+      row.querySelector('input').addEventListener('input', function(e){
+        var v = parseInt(e.target.value, 10); alter[i] = isFinite(v) ? Math.max(0, Math.min(27, v)) : 0; update();
+      });
+      row.querySelector('button').addEventListener('click', function(){ if (alter.length > 1){ alter.splice(i,1); renderKids(); update(); } });
+      kidsEl.appendChild(row);
+    });
+    document.getElementById('addKid').disabled = alter.length >= 5;
+  }
+
+  function update(){
+    var modus = document.querySelector('input[name="modus"]:checked').value;
+    document.getElementById('lbl-einkommen').textContent = modus === 'jahr' ? 'Jahresnetto inklusive 13. und 14. Gehalt' : 'Monatsnetto';
+    var bt = document.getElementById('betreuung').value;
+    document.getElementById('drField').hidden = bt !== 'dr';
+    var inp = {
+      modus: modus, einkommen: num('einkommen'), fbonus: num('fbonus'), alter: alter.slice(),
+      ext10: int('ext10'), ext10p: int('ext10p'), ehe: parseInt(document.getElementById('ehe').value, 10) || 0,
+      betreuung: bt === 'dr' ? 'dr' : parseInt(bt, 10) || 0, einkommenB: num('einkommenB')
+    };
+    var res = berechne(inp);
+    var rows = document.getElementById('rows'); rows.innerHTML = '';
+    var notes = [], steps = [];
+    var zahlerB = false;
+
+    res.kinder.forEach(function(k){
+      var tr = document.createElement('tr');
+      var betrag = k.betrag;
+      if (betrag < 0) zahlerB = true;
+      tr.innerHTML = '<td>Kind ' + k.nr + '<br><span style="font-size:13px;color:var(--muted)">' + k.alter + ' Jahre</span></td>' +
+        '<td class="n">' + k.pct + ' %</td><td class="n"><b>' + eur.format(Math.abs(betrag)) + '</b></td>' +
+        '<td class="n" style="color:var(--muted)">' + eur.format(k.regel.v) + '</td>';
+      rows.appendChild(tr);
+      if (k.gedeckelt) notes.push('Bei Kind ' + k.nr + ' liegt das Ergebnis über dem 2,5-Fachen des Regelbedarfs. Gerichte begrenzen hier im Einzelfall auf das Zwei- bis Zweieinhalbfache; angezeigt ist die Obergrenze.');
+      else if (k.luxus) notes.push('Bei Kind ' + k.nr + ' liegt das Ergebnis über dem Doppelten des Regelbedarfs. Ab hier kann ein Gericht im Einzelfall begrenzen.');
+      if (k.alter >= 18) notes.push('Kind ' + k.nr + ' ist volljährig. Unterhalt besteht nur, solange es sich noch nicht selbst erhalten kann, etwa während einer Ausbildung; eigenes Einkommen wird angerechnet.');
+    });
+
+    var total = res.summe;
+    var totalEl = document.getElementById('total');
+    if (inp.betreuung === 'dr'){
+      document.getElementById('totalLabel').textContent = 'Ausgleichszahlung bei Doppelresidenz';
+      totalEl.textContent = eur.format(Math.abs(total));
+      document.getElementById('totalSub').textContent = total >= 0 ? 'zahlt der Elternteil mit dem höheren Einkommen (Sie)' : 'zahlt der andere Elternteil an Sie';
+    } else {
+      document.getElementById('totalLabel').textContent = 'Unterhalt gesamt pro Monat';
+      totalEl.textContent = eur.format(total);
+      document.getElementById('totalSub').textContent = 'Bemessungsgrundlage ' + eur.format(res.bem) + ' · ' + (res.bem > 0 ? Math.round(total / res.bem * 100) : 0) + ' % davon';
+    }
+
+    if (inp.betreuung !== 'dr' && res.bem > 0 && res.rest < BELASTUNG){
+      notes.push('Nach Abzug des Unterhalts blieben rund ' + eur.format(Math.max(0,res.rest)) + '. Dem zahlenden Elternteil muss ein Mindestbetrag zum Leben bleiben (Belastungsgrenze, rund 980 € im Jahr 2026). Der Unterhalt kann deshalb niedriger ausfallen.');
+    }
+    if (inp.betreuung === 1 || inp.betreuung === 2){
+      notes.push('Die Kürzung um ' + (inp.betreuung * 10) + ' % ist eine Richtschnur. Es gibt keine verbindlichen Abschlagssätze; entscheidend ist, welche Kosten der zahlende Elternteil tatsächlich übernimmt.');
+    }
+    if (inp.betreuung === 'dr'){
+      notes.push('Doppelresidenz: Für beide Eltern wird ein fiktiver Unterhalt berechnet, die Differenz wird halbiert. Das setzt eine annähernd gleichwertige Betreuung voraus und wird im Einzelfall geprüft.');
+    }
+
+    // Rechenweg
+    if (inp.modus === 'jahr') steps.push('<b>Bemessungsgrundlage:</b> ' + eur2.format(inp.einkommen) + ' ÷ 12 = ' + eur2.format(inp.einkommen/12));
+    else steps.push('<b>Bemessungsgrundlage:</b> ' + eur2.format(inp.einkommen) + ' × 14 ÷ 12 = ' + eur2.format(inp.einkommen*14/12));
+    if (inp.fbonus > 0) steps.push('<b>Familienbonus herausgerechnet:</b> − ' + eur2.format(inp.fbonus) + ' = ' + eur2.format(res.bem));
+    res.kinder.forEach(function(k){
+      var t = '<b>Kind ' + k.nr + ' (' + k.alter + ' J.):</b> ' + k.basis + ' %';
+      if (k.abzug) t += ' − ' + k.abzug + ' Prozentpunkte für weitere Unterhaltspflichten';
+      t += ' = ' + k.pct + ' % → ' + eur2.format(k.roh);
+      if (k.kuerzung) t += ', abzüglich ' + k.kuerzung + ' % Betreuung = ' + eur2.format(k.betrag);
+      if (k.dr) t += '; anderer Elternteil ' + eur2.format(k.dr.b) + ' → (' + eur2.format(k.dr.a) + ' − ' + eur2.format(k.dr.b) + ') ÷ 2 = ' + eur2.format(k.betrag);
+      steps.push(t);
+    });
+    document.getElementById('steps').innerHTML = steps.map(function(s){ return '<li>' + s + '</li>'; }).join('');
+    document.getElementById('notes').innerHTML = notes.map(function(n){ return '<div class="note">' + n + '</div>'; }).join('');
+  }
+
+  document.getElementById('addKid').addEventListener('click', function(){ if (alter.length < 5){ alter.push(8); renderKids(); update(); } });
+  document.getElementById('calc').addEventListener('input', update);
+  document.getElementById('calc').addEventListener('change', update);
+  document.getElementById('calc').addEventListener('submit', function(e){ e.preventDefault(); });
+
+  renderKids();
+  update();
+})();
+</script>
+
+</body>
+</html>
