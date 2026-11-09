@@ -39,5 +39,5 @@ Ratgeber-Seite zu Trennung und Scheidung in Österreich. Betreiber: FRABANTO AUS
 8. Ehegattenunterhalt in Österreich
 9. Strittige Scheidung: Ablauf, Verschulden, Fristen
 10. Aufteilung von Vermögen und Schulden (Frist 1 Jahr nach Rechtskraft)
-11. Unterhaltsvorschuss beantragen
+11. ~~Unterhaltsvorschuss beantragen~~ – erledigt 10.11.2026
 12. Gemeinsamer Kredit nach der Trennung
