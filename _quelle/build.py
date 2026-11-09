@@ -30,6 +30,12 @@ ARTIKEL = [
          desc="Kindesunterhalt in Österreich: Prozentsätze 16–22 %, Abzüge, Regelbedarf 2026, Obergrenze, Doppelresidenz und Rechenbeispiel mit zwei Kindern.",
          kurz="Prozentsätze, Abzüge, Regelbedarf 2026, Obergrenze und ein durchgerechnetes Beispiel.",
          phase="Umsetzen", published="2026-11-09", modified="2026-11-09"),
+    dict(handle="unterhaltsvorschuss",
+         h1="Unterhaltsvorschuss in Österreich 2026: Anspruch, Höhe, Antrag",
+         seo="Unterhaltsvorschuss 2026: Höhe & Antrag | Cressida",
+         desc="Unterhaltsvorschuss in Österreich 2026: wer ihn bekommt, Höchstbetrag 855,16 €, feste Beträge ohne Titel, Antrag in 5 Schritten und Unterlagen.",
+         kurz="Wenn der andere Elternteil nicht zahlt: Anspruch, Beträge 2026, Antrag und Unterlagen.",
+         phase="Umsetzen", published="2026-11-10", modified="2026-11-10"),
 ]
 
 AUTOR = {"@type": "Person", "name": "Anton Scharmitzer", "honorificPrefix": "Mag.",
