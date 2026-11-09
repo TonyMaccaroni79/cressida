@@ -17,7 +17,7 @@ ARTIKEL = [
          seo="Einvernehmliche Scheidung: Ablauf & Kosten 2026 | Cressida",
          desc="Einvernehmliche Scheidung in Österreich: Voraussetzungen, Ablauf in 6 Schritten, Checkliste für die Vereinbarung und Gebühren 2026 (812 €).",
          kurz="Voraussetzungen, Ablauf in sechs Schritten und Checkliste für die Scheidungsvereinbarung.",
-         phase="Entscheiden", published="2026-11-09", modified="2026-11-13"),
+         phase="Entscheiden", published="2026-11-09", modified="2026-11-16"),
     dict(handle="scheidung-kosten",
          h1="Was kostet eine Scheidung in Österreich?",
          seo="Was kostet eine Scheidung in Österreich 2026? | Cressida",
@@ -54,6 +54,12 @@ ARTIKEL = [
          desc="Ehegattenunterhalt in Österreich: Vereinbarung oder Verschulden, Richtwerte 33 % und 40 %, Unterhalt bei Kinderbetreuung, Rechenbeispiel und Checkliste.",
          kurz="Vereinbarung oder Gesetz, Richtwerte 33 und 40 Prozent, Rechenbeispiel und wann der Anspruch endet.",
          phase="Vereinbaren", published="2026-11-13", modified="2026-11-13"),
+    dict(handle="elternberatung",
+         h1="Elternberatung vor der Scheidung: Ablauf und Anbieter",
+         seo="Elternberatung vor Scheidung (§ 95 AußStrG) | Cressida",
+         desc="Elternberatung vor der einvernehmlichen Scheidung in Österreich: wer muss hin, Ablauf, anerkannte Berater finden, Bestätigung fürs Gericht, Kosten.",
+         kurz="Wer zur Pflichtberatung muss, Ablauf in vier Schritten, Anbieter finden und Bestätigung fürs Gericht.",
+         phase="Vereinbaren", published="2026-11-16", modified="2026-11-16"),
 ]
 
 AUTOR = {"@type": "Person", "name": "Anton Scharmitzer", "honorificPrefix": "Mag.",
