@@ -125,3 +125,13 @@ a.card.rg{text-decoration:none;color:var(--fg);display:block}
 a.card.rg h2{margin:0 0 8px;font-size:21px;line-height:1.25}
 a.card.rg p{margin:0;font-size:15px;color:var(--muted)}
 a.card.rg .num{margin:0 0 10px;font-size:14px;font-weight:800;color:var(--accent)}
+/* Formulare */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nl-box{margin-top:48px;background:var(--soft);border-radius:18px;padding:28px 30px}
+.nl-box h2{margin:0 0 8px;font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em;color:var(--fg)}
+.nl-box > p{margin:0 0 16px;color:var(--body)}
+.nl-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.nl-row input{flex:1 1 240px;min-width:0;min-height:48px;padding:0 14px;border:1.5px solid var(--line-strong);border-radius:10px;font:inherit;font-size:16px;background:var(--surface);color:var(--fg)}
+.nl-check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--body);margin-bottom:8px}
+.nl-check input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--accent)}

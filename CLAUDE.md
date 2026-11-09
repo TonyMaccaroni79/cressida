@@ -12,6 +12,11 @@ Ratgeber-Seite zu Trennung und Scheidung in Österreich. Betreiber: FRABANTO AUS
 - Commits als `Claude <noreply@anthropic.com>`.
 - Neue Seite: in `sitemap.xml` und bei Bedarf in `llms.txt` eintragen, danach IndexNow anpingen: `https://api.indexnow.org/indexnow?url=<neue URL>&key=d0dbce36479e9f529e372ec4804deeed`.
 
+## Formulare (gleicher Aufbau wie daheimklar.at)
+- `api/` = Vercel Functions: `lead.js` (typ=newsletter mit Double-Opt-in; typ=anfrage nur mit Umgebungsvariable `ANFRAGEN_AKTIV=1`), `bestaetigen.js`, `abmelden.js`, `aufraeumen.js` (Cron täglich, löscht nach 180 Tagen), `export.js` (CSV mit `?key=`), `health.js`. Seitenspezifisches (Einwilligungstexte, Anliegen) in `api/_site.js`; Textänderung = Version erhöhen.
+- Speicher: privater Vercel-Blob-Store (`BLOB_READ_WRITE_TOKEN`). Umgebungsvariablen: `SITE_BASE_URL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `NOTIFY_TO`, `EXPORT_KEY`, `CRON_SECRET`, optional `ANFRAGEN_AKTIV`.
+- Newsletter-Box: `newsletter_box()` in `_quelle/build.py` (Artikel) und handeingefügt in `index.html`. Danke-/Fehler-/Newsletter-Seiten erzeugt `build.py`.
+
 ## Hosting-Regel (Vercel Hobby)
 - Solange das Projekt im Gratis-Plan läuft: keine Preise, Kaufbuttons, Partner-Abos, Werbung oder Affiliate-Links (Vercel-Regel zu kommerzieller Nutzung). Kommerzielle Teile erst nach Umzug auf Hetzner oder Vercel Pro.
 

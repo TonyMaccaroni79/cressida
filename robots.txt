@@ -3,8 +3,11 @@
 
 User-agent: *
 Allow: /
-Disallow: /anfrage/danke/
-Disallow: /kurs/bestaetigt/
+Disallow: /api/
+Disallow: /danke/
+Disallow: /fehler/
+Disallow: /newsletter-pruefen/
+Disallow: /newsletter-bestaetigt/
 
 User-agent: Googlebot
 Allow: /
