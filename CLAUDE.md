@@ -29,7 +29,7 @@ Ratgeber-Seite zu Trennung und Scheidung in Österreich. Betreiber: FRABANTO AUS
 3. ~~Kindesunterhalt~~ – erledigt 09.11.2026
 4. Scheidungsvergleich: Mustergliederung und Checkliste (ohne Vertragsentwurf)
 5. Elternberatung vor der Scheidung: Ablauf, Anbieter, Bestätigung
-6. Obsorge und Kontaktrecht nach der Trennung
+6. ~~Obsorge und Kontaktrecht nach der Trennung~~ – erledigt 11.11.2026
 7. Ehewohnung: bleiben, ausziehen, auszahlen
 8. Ehegattenunterhalt in Österreich
 9. Strittige Scheidung: Ablauf, Verschulden, Fristen
