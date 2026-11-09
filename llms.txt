@@ -9,11 +9,16 @@ Kernfakten (Stand November 2026):
 - Einvernehmliche Scheidung: Lebensgemeinschaft seit mindestens einem halben Jahr aufgehoben, beidseitiges Zugeständnis der Zerrüttung, Vereinbarung über alle Scheidungsfolgen. Getrennt wohnen ist nicht nötig.
 - Gerichtsgebühren: 406 Euro für den Antrag und 406 Euro für den Vergleich; 609 Euro für den Vergleich, wenn eine Immobilie betroffen ist (oesterreich.gv.at, Stand August 2026).
 - Mit minderjährigen Kindern ist vor der einvernehmlichen Scheidung eine Elternberatung nach § 95 Abs 1a AußStrG Pflicht.
-- Familienmediation bei Trennung und Scheidung wird vom Bundeskanzleramt gefördert.
+- Familienmediation bei Trennung und Scheidung wird vom Bundeskanzleramt gefördert: 220 € pro Stunde für ein Mediatorenpaar, Selbstbehalt 0 bis 120 € pro Stunde nach Einkommen und Kinderzahl (Tariftabelle ab 1.1.2026).
+- Strittige Scheidung: 433 € Gerichtsgebühr für die Klage (oesterreich.gv.at, Stand August 2026).
 - Kindesunterhalt: Prozentsätze vom Nettoeinkommen inkl. Sonderzahlungen; Familienbeihilfe wird seit 2019 nicht abgezogen.
 
 ## Seiten
 
+- [Ratgeber-Übersicht](https://cressida.at/ratgeber/): alle Artikel zu Trennung und Scheidung in Österreich
+- [Einvernehmliche Scheidung](https://cressida.at/ratgeber/einvernehmliche-scheidung/): Voraussetzungen (§ 55a EheG), Ablauf in sechs Schritten, Checkliste für die Scheidungsvereinbarung, Unterlagen, Gebühren 812 € bzw. 1.015 € mit Immobilie
+- [Was kostet eine Scheidung in Österreich?](https://cressida.at/ratgeber/scheidung-kosten/): Gerichtsgebühren einvernehmlich (406 + 406 €) und strittig (433 € Klage), Verfahrenshilfe, Tariftabelle der geförderten Familienmediation 2026 (220 € pro Stunde, Selbstbehalt 0–120 € je nach Einkommen und Kinderzahl)
+- [Kindesunterhalt 2026](https://cressida.at/ratgeber/kindesunterhalt/): Prozentwertmethode, Abzüge, Regelbedarf 2026, Obergrenze, Betreuung und Doppelresidenz, Rechenbeispiel
 - [Startseite](https://cressida.at/): Überblick, vier Phasen einer Trennung, häufige Fragen
 - [Wegweiser](https://cressida.at/wegweiser/): sechs Fragen, die zu einem von vier Wegen führen (Trennung ohne Scheidung, einvernehmliche Scheidung, Mediation, strittige Scheidung)
 - [Unterhaltsrechner](https://cressida.at/unterhaltsrechner/): Kindesunterhalt nach der Prozentwertmethode (16/18/20/22 %), Regelbedarf 2026 (360/460/560/700/800 €), Abzüge für weitere Unterhaltspflichten, Betreuung und Doppelresidenz

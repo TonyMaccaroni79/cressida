@@ -3,8 +3,10 @@
 Ratgeber-Seite zu Trennung und Scheidung in Österreich. Betreiber: FRABANTO AUSTRIA GmbH, Mag. Anton Scharmitzer. Sprache: Deutsch (Österreich), Sie-Form, ruhig und sachlich, keine Kampfrhetorik, keine Parteinahme für eine Seite.
 
 ## Aufbau
-- Repository-Wurzel = veröffentlichte Seite (statische HTML-Dateien) + `vercel.json`. Kein Build-Schritt.
-- Seiten: `/` (Startseite mit FAQ), `/wegweiser/` (Quiz, Logik im Inline-Skript), `/unterhaltsrechner/` (Rechner, Funktion `berechne()` ohne DOM), `/impressum/`, `/datenschutz/`, `404.html`.
+- Repository-Wurzel = veröffentlichte Seite (statische HTML-Dateien) + `vercel.json`. Vercel baut nichts; erzeugte Seiten werden mit committet.
+- Ratgeber: Artikeltext in `_quelle/ratgeber/<handle>.html`, Metadaten (h1, SEO-Titel ≤ 60 Zeichen, Beschreibung ≤ 155 Zeichen, phase, published, modified) in der Liste `ARTIKEL` in `_quelle/build.py`. Bauen: `cd _quelle && python3 build.py` – schreibt `/ratgeber/<handle>/index.html`, `/ratgeber/index.html` und `sitemap.xml` (Article-, FAQ- und Breadcrumb-Schema automatisch). Danach `llms.txt` ergänzen und Startseite/Werkzeuge intern verlinken.
+- Artikel-Aufbau: erster Absatz `<strong>Die kurze Antwort:</strong>`, H2 als Fragen, mindestens eine Tabelle oder Checkliste, `<h2>Häufige Fragen</h2>` mit 3–6 `<h3>` + genau einem `<p>`, am Ende `<h2>Quellen</h2>` mit Stand-Datum.
+- Seiten: `/` (Startseite mit FAQ), `/ratgeber/` (Übersicht + Artikel), `/wegweiser/` (Quiz, Logik im Inline-Skript), `/unterhaltsrechner/` (Rechner, Funktion `berechne()` ohne DOM), `/impressum/`, `/datenschutz/`, `404.html`.
 - Gemeinsames Layout: `styles.css`; Schrift lokal in `/fonts/pjs.woff2` (keine Google Fonts, keine Fremd-Skripte, keine Cookies).
 - Veröffentlichen: Push auf `main`; Vercel baut automatisch (Projekt `cressida`, Team `team_b8wfYEGY3egOk8PEs8TaaKhF`).
 - Commits als `Claude <noreply@anthropic.com>`.
@@ -20,3 +22,17 @@ Ratgeber-Seite zu Trennung und Scheidung in Österreich. Betreiber: FRABANTO AUS
 - Österreich-spezifisch schreiben und deutsche Irrtümer richtigstellen (kein Trennungsjahr, keine Düsseldorfer Tabelle).
 - Bei Gewalt in der Beziehung immer auf Schutz statt Mediation verweisen (Frauenhelpline 0800 222 555, Notruf 133).
 - Unterhaltswerte: Prozentsätze 16/18/20/22 %, Regelbedarf jährlich zum 1. Jänner aktualisieren.
+
+## Themenliste Ratgeber (nach Priorität, erledigte streichen)
+1. ~~Einvernehmliche Scheidung~~ – erledigt 09.11.2026
+2. ~~Scheidungskosten~~ – erledigt 09.11.2026
+3. ~~Kindesunterhalt~~ – erledigt 09.11.2026
+4. Scheidungsvergleich: Mustergliederung und Checkliste (ohne Vertragsentwurf)
+5. Elternberatung vor der Scheidung: Ablauf, Anbieter, Bestätigung
+6. Obsorge und Kontaktrecht nach der Trennung
+7. Ehewohnung: bleiben, ausziehen, auszahlen
+8. Ehegattenunterhalt in Österreich
+9. Strittige Scheidung: Ablauf, Verschulden, Fristen
+10. Aufteilung von Vermögen und Schulden (Frist 1 Jahr nach Rechtskraft)
+11. Unterhaltsvorschuss beantragen
+12. Gemeinsamer Kredit nach der Trennung
