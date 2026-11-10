@@ -57,7 +57,7 @@ ARTIKEL = [
 ]
 
 AUTOR = {"@type": "Person", "name": "Anton Scharmitzer", "honorificPrefix": "Mag.",
-         "jobTitle": "Herausgeber, Betriebswirt", "url": f"{SITE}/impressum/"}
+         "jobTitle": "Herausgeber, Betriebswirt", "url": f"{SITE}/ueber-uns/"}
 
 LOGO = ('<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="var(--accent)"/>'
         '<path d="M22 11.5a8 8 0 1 0 0 11" fill="none" stroke="var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/>'
@@ -75,7 +75,7 @@ def header(current=""):
 
 FOOTER = ('<footer class="site"><div class="w"><p>Cressida bietet allgemeine Informationen zum österreichischen Recht. '
           'Die Inhalte ersetzen keine individuelle Rechtsberatung. © 2026 cressida.at</p>'
-          '<nav aria-label="Fußzeile"><a href="/ratgeber/">Ratgeber</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav>'
+          '<nav aria-label="Fußzeile"><a href="/ratgeber/">Ratgeber</a><a href="/ueber-uns/">Über Cressida</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav>'
           '</div></footer>')
 
 def head(title, desc, url, ogtype, graph):
@@ -175,7 +175,7 @@ def artikel_seite(a, alle):
 <nav class="crumbs" aria-label="Brotkrumen"><a href="/">Startseite</a> › <a href="/ratgeber/">Ratgeber</a></nav>
 <p class="eyebrow">Ratgeber · {html.escape(a['phase'])}</p>
 <h1>{html.escape(a['h1'])}</h1>
-<p class="meta">Geprüft am {datum(a['modified'])} an den amtlichen Quellen · Von Mag. Anton Scharmitzer</p>
+<p class="meta">Geprüft am {datum(a['modified'])} an den amtlichen Quellen · Von <a href="/ueber-uns/" rel="author">Mag. Anton Scharmitzer</a></p>
 <details class="toc"><summary>Inhalt</summary><ol>{toc_html}</ol></details>
 <div class="prose">
 {body}
@@ -274,9 +274,87 @@ DATENSCHUTZ_FORMULARE = """<h2>Newsletter</h2>
 <p>Formulardaten werden in einem privaten Speicher von Vercel in Frankfurt am Main abgelegt. E-Mails versenden wir über unseren E-Mail-Anbieter.</p>
 """
 
+# --------------------------------------------------------------------------- Startseite: Phasen-Listen
+# Die vier Phasen-Karten auf der Startseite zeigen nur Links auf Seiten, die es gibt. Die Listen werden hier aus
+# ARTIKEL (Feld "phase", optional "start" als Linktext) erzeugt; angekündigte Titel ohne Artikel gibt es nicht mehr.
+START_TITEL = {
+    "einvernehmliche-scheidung": "Einvernehmliche Scheidung: Ablauf und Dauer",
+    "scheidung-kosten": "Was eine Scheidung wirklich kostet",
+    "kindesunterhalt": "Kindesunterhalt: so wird gerechnet",
+    "unterhaltsvorschuss": "Unterhaltsvorschuss, wenn der Unterhalt ausbleibt",
+}
+# Feste Zusatzlinks je Phase (Werkzeuge, Sprungmarken), nach den Artikeln der Phase
+START_EXTRA = {
+    "Vereinbaren": [("/ratgeber/scheidung-kosten/#mediation", "Mediation: Kosten und Förderung")],
+    "Umsetzen": [("/unterhaltsrechner/", "Kindesunterhalt berechnen")],
+    "Entscheiden": [("/wegweiser/", "Wegweiser: welcher Weg passt?")],
+}
+# Abweichende Phase nur für die Startseite (Metadaten in ARTIKEL bleiben unverändert)
+START_PHASE = {"unterhaltsvorschuss": "Neu anfangen"}
+
+def start_titel(a):
+    if a.get("start"):
+        return a["start"]
+    if a["handle"] in START_TITEL:
+        return START_TITEL[a["handle"]]
+    t = a["h1"].split(":")[0]
+    t = re.sub(r"\s+in Österreich", "", t)
+    return re.sub(r"\s+20\d\d\b", "", t).strip()
+
+def startseite_phasen(alle):
+    """Schreibt die <ul> der Phasen-Karten in index.html neu. Mehrfach ausführbar."""
+    pfad = ROOT / "index.html"
+    seite = pfad.read_text(encoding="utf-8")
+    def karte(m):
+        phase = m.group(2)
+        links = [(f"/ratgeber/{a['handle']}/", start_titel(a)) for a in alle if START_PHASE.get(a["handle"], a["phase"]) == phase]
+        links += [l for l in START_EXTRA.get(phase, []) if l[0] not in {x[0] for x in links}]
+        lis = "".join(f'<li><a href="{h}">{html.escape(t)}</a></li>' for h, t in links)
+        return m.group(1) + (f"<ul>{lis}</ul>" if lis else "") + "</article>"
+    neu, n = re.subn(r'(<article class="card phase"><p class="num">Phase \d</p><h3>([^<]+)</h3><p>[^<]*</p>)(?:<ul>.*?</ul>)?</article>', karte, seite)
+    assert n == 4, f"Phasen-Karten auf der Startseite nicht gefunden ({n})"
+    pfad.write_text(neu, encoding="utf-8")
+
+# --------------------------------------------------------------------------- Über Cressida
+UEBER_UNS_STAND = "2026-11-10"
+
+def ueber_uns():
+    url = f"{SITE}/ueber-uns/"
+    titel = "Über Cressida: wer dahintersteht und wie wir prüfen | Cressida"
+    desc = "Wer cressida.at betreibt, wie die Ratgeber zu Trennung und Scheidung entstehen und geprüft werden und wie sich die Seite finanziert."
+    graph = [
+        {"@type": "AboutPage", "@id": url, "url": url, "inLanguage": "de-AT", "about": {"@id": f"{SITE}/#organization"}},
+        {"@type": "Organization", "@id": f"{SITE}/#organization", "name": "Cressida", "url": f"{SITE}/", "logo": f"{SITE}/icon.svg"},
+        AUTOR,
+    ]
+    inhalt = """<main class="w narrow legal" style="padding-block:56px 72px">
+<h1 style="font-size:clamp(30px,4vw,42px)">Über Cressida</h1>
+<p><strong>Die kurze Antwort:</strong> cressida.at ist ein kostenloser Ratgeber zu Trennung und Scheidung in Österreich. Er wird von Mag. Anton Scharmitzer und der FRABANTO AUSTRIA GmbH in Wien herausgegeben. Jede Zahl, Frist und Gebühr prüfen wir an der amtlichen Quelle und versehen sie mit einem Prüfdatum.</p>
+<h2>Wer steht dahinter?</h2>
+<p>Herausgeber ist Mag. Anton Scharmitzer, Betriebswirt (Studium der Internationalen Betriebswirtschaft an der Universität Wien) und Geschäftsführer der FRABANTO AUSTRIA GmbH in Wien. Cressida ist keine Anwaltskanzlei und keine Beratungsstelle. Die Seite erklärt, wie Trennung und Scheidung in Österreich ablaufen, damit Sie vorbereitet in Gespräche mit Gericht, Beratungsstelle, Mediation oder Anwältin gehen.</p>
+<h2>Wie entstehen die Ratgeber?</h2>
+<ul>
+<li>Recherche an amtlichen Quellen: oesterreich.gv.at, Justiz, Bundeskanzleramt, Rechtsinformationssystem (RIS) und Statistik Austria.</li>
+<li>Jede Zahl, Frist und Gebühr wird an der Quelle geprüft. Was sich nicht belegen lässt, lassen wir weg und sagen das offen.</li>
+<li>Jeder Ratgeber nennt seine Quellen und das Datum der letzten Prüfung. Beträge und Gebühren prüfen wir zum Jahreswechsel neu.</li>
+<li>Alle Inhalte gelten für österreichisches Recht. Wir nehmen nicht Partei für eine Seite.</li>
+</ul>
+<h2>Wegweiser und Unterhaltsrechner</h2>
+<p>Beide Werkzeuge rechnen nur in Ihrem Browser. Ihre Eingaben werden nicht an uns übertragen und nicht gespeichert. Die Ergebnisse sind Orientierungswerte; verbindlich ist immer die Entscheidung des Gerichts.</p>
+<h2>Wie finanziert sich Cressida?</h2>
+<p>Die Ratgeber und Werkzeuge sind kostenlos und ohne Werbung. Derzeit verdient Cressida kein Geld; die Seite wird von der FRABANTO AUSTRIA GmbH getragen. Sollte sich das ändern, steht es hier, bevor es gilt. Bezahlte Artikel gibt es nicht.</p>
+<h2>Was Cressida nicht ist</h2>
+<p>Wir ersetzen keine Rechtsberatung und beurteilen keinen Einzelfall. Dafür gibt es Familienberatungsstellen, die Arbeiterkammer, Mediatorinnen und Mediatoren sowie Anwältinnen und Anwälte. Bei Gewalt in der Beziehung geht Schutz vor: Frauenhelpline 0800 222 555, Polizei-Notruf 133.</p>
+<h2>Fehler gefunden?</h2>
+<p>Wenn sich eine Regel ändert oder Ihnen ein Fehler auffällt, schreiben Sie an <a href="mailto:office@frabanto.eu">office@frabanto.eu</a>. Wir korrigieren und aktualisieren das Prüfdatum.</p>
+<p style="font-size:14px;color:var(--muted)">FRABANTO AUSTRIA GmbH · Theodor-Körner-Gasse 34, 1210 Wien · <a href="/impressum/">Impressum</a></p>
+</main>"""
+    stil = "<style>.legal h2{font-size:21px;margin:32px 0 8px}.legal p,.legal li{color:var(--body)}</style>\n</head>"
+    return head(titel, desc, url, "website", graph).replace("</head>", stil) + f"\n<body>\n{header()}\n{inhalt}\n{FOOTER}\n</body>\n</html>\n"
+
 def sitemap(alle):
     seiten = [("/", "2026-11-09"), ("/ratgeber/", max(a["modified"] for a in alle)),
-              ("/wegweiser/", "2026-11-09"), ("/unterhaltsrechner/", "2026-11-09")]
+              ("/wegweiser/", "2026-11-09"), ("/unterhaltsrechner/", "2026-11-09"), ("/ueber-uns/", UEBER_UNS_STAND)]
     seiten += [(f"/ratgeber/{a['handle']}/", a["modified"]) for a in alle]
     zeilen = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{d}</lastmod></url>" for p, d in seiten)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{zeilen}\n</urlset>\n'
@@ -291,8 +369,11 @@ if __name__ == "__main__":
         print("geschrieben:", ziel.relative_to(ROOT))
     (ROOT / "ratgeber" / "index.html").write_text(uebersicht(ARTIKEL), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(ARTIKEL), encoding="utf-8")
+    startseite_phasen(ARTIKEL)
+    (ROOT / "ueber-uns").mkdir(exist_ok=True)
+    (ROOT / "ueber-uns" / "index.html").write_text(ueber_uns(), encoding="utf-8")
     for rel, (pfad, titel, text) in FORM_SEITEN.items():
         z = ROOT / rel
         z.parent.mkdir(parents=True, exist_ok=True)
         z.write_text(info_seite(pfad, titel, text), encoding="utf-8")
-    print("Übersicht, Formularseiten und sitemap.xml aktualisiert")
+    print("Übersicht, Startseiten-Listen, Über-uns, Formularseiten und sitemap.xml aktualisiert")
