@@ -95,7 +95,9 @@ def head(title, desc, url, ogtype, graph):
 <link rel="canonical" href="{url}">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="theme-color" content="#1F5F5B">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/pjs.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:type" content="{ogtype}">
 <meta property="og:locale" content="de_AT">
@@ -161,7 +163,7 @@ def artikel_seite(a, alle):
          "mainEntityOfPage": url, "image": f"{SITE}/og.png", "abstract": erster,
          "about": {"@type": "Thing", "name": a["h1"].split(":")[0]},
          "spatialCoverage": {"@type": "Country", "name": "Österreich"}},
-        {"@type": "Organization", "@id": f"{SITE}/#organization", "name": "Cressida", "url": f"{SITE}/", "logo": f"{SITE}/icon.svg"},
+        {"@type": "Organization", "@id": f"{SITE}/#organization", "name": "Cressida", "url": f"{SITE}/", "logo": f"{SITE}/icon-512.png"},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Startseite", "item": f"{SITE}/"},
             {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": f"{SITE}/ratgeber/"},
@@ -330,7 +332,7 @@ def ueber_uns():
     desc = "Wer cressida.at betreibt, wie die Ratgeber zu Trennung und Scheidung entstehen und geprüft werden und wie sich die Seite finanziert."
     graph = [
         {"@type": "AboutPage", "@id": url, "url": url, "inLanguage": "de-AT", "about": {"@id": f"{SITE}/#organization"}},
-        {"@type": "Organization", "@id": f"{SITE}/#organization", "name": "Cressida", "url": f"{SITE}/", "logo": f"{SITE}/icon.svg"},
+        {"@type": "Organization", "@id": f"{SITE}/#organization", "name": "Cressida", "url": f"{SITE}/", "logo": f"{SITE}/icon-512.png"},
         AUTOR,
     ]
     inhalt = """<main class="w narrow legal" style="padding-block:56px 72px">
